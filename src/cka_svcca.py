@@ -177,7 +177,7 @@ def analyze_config(task_name, config_label, device,
     teacher_emb = get_cls_embeddings(teacher, test_loader, device)
     print(f"  Teacher embeddings: {teacher_emb.shape}")
     
-    depths = [1, 3, 6, 10]
+    depths = [1, 2, 4, 6, 8, 10]
     results = {
         'cka': {'T-A': {}, 'T-S': {}, 'A-S': {}},
         'svcca': {'T-A': {}, 'T-S': {}, 'A-S': {}},
@@ -297,7 +297,7 @@ def main():
     print("  SVD-Denoised CKA: Teacher vs Assistant (with Student F1)")
     print(f"{'='*120}")
     header = f"  {'Config':<22}"
-    for d in [1, 3, 6, 10]:
+    for d in [1, 2, 4, 6, 8, 10]:
         header += f" {'CKA'+str(d)+'L':<10} {'F1'+str(d)+'L':<10}"
     print(header)
     print(f"  {'─'*105}")
@@ -305,7 +305,7 @@ def main():
     for config, results in all_results.items():
         if results and 'cka' in results:
             parts = [config]
-            for d in [1, 3, 6, 10]:
+            for d in [1, 2, 4, 6, 8, 10]:
                 cka = results['cka']['T-A'].get(str(d), 'N/A')
                 f1 = results.get('f1_student', {}).get(str(d), 'N/A')
                 parts.append(f"{cka:.4f}" if isinstance(cka, float) else str(cka))
@@ -319,7 +319,7 @@ def main():
     print("  SVCCA-inspired: Teacher vs Assistant")
     print(f"{'='*120}")
     header = f"  {'Config':<22}"
-    for d in [1, 3, 6, 10]:
+    for d in [1, 2, 4, 6, 8, 10]:
         header += f" {'SV'+str(d)+'L':<10}"
     print(header)
     print(f"  {'─'*65}")
@@ -327,7 +327,7 @@ def main():
     for config, results in all_results.items():
         if results and 'svcca' in results:
             parts = [config]
-            for d in [1, 3, 6, 10]:
+            for d in [1, 2, 4, 6, 8, 10]:
                 sv = results['svcca']['T-A'].get(str(d), 'N/A')
                 parts.append(f"{sv:.4f}" if isinstance(sv, float) else str(sv))
             print(f"  {parts[0]:<22} {parts[1]:<10} {parts[2]:<10} {parts[3]:<10} {parts[4]:<10}")
