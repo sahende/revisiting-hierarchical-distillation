@@ -20,7 +20,7 @@ from prepare_data import prepare_all_tasks
 # =========================
 # CONSTANTS
 # =========================
-ALL_DEPTHS = [1, 3, 6, 10]
+ALL_DEPTHS = [1, 2, 4, 6, 8, 10]
 
 MODELS_DIR = Config.MODEL_SAVE_PATH
 ALL_DATASET_DIR = os.path.join(MODELS_DIR, "all_dataset")
