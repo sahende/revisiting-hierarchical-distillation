@@ -124,11 +124,14 @@ Batch size: 16
 
 
 ```bibtex
-@misc{simsek2026hkdDepth,
-  title={Revisiting Hierarchical Knowledge Distillation: Depth Dynamics Across Data Regimes},
-  author={Şimşek, Şahende},
-  year={2026},
-  howpublished={\url{https://github.com/sahende/revisiting-hierarchical-distillation}}
+@inproceedings{simsek2026hkdDepth,
+  author    = {Şimşek, Şahende and Kaçıkan, Egemen and Onan, Aytuğ},
+  title     = {Hierarchical Knowledge Distillation Under Data Scarcity: An Empirical Study of Depth Dynamics},
+  booktitle = {2026 International Artificial Intelligence and Data Processing Symposium (IDAP)},
+  year      = {2026},
+  publisher = {IEEE},
+  doi       = {10.1109/IDAP71869.2026.11728118},
+  url       = {https://doi.org/10.1109/IDAP71869.2026.11728118}
 }
 ```
 
